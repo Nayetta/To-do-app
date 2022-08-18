@@ -1,9 +1,10 @@
 <template>
   <div>Sign In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form action="">
-    <input type="text" />
-    <input type="text" />
+  <form @click.prevent="signIn">
+    <input type="text" v-model="email" />
+    <input type="password" v-model="password" />
+    <input type="submit" />
   </form>
   <p>Time to build up the Final Project!</p>
   <p class="wu-text">Wu Tang Forever</p>
