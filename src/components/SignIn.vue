@@ -1,7 +1,7 @@
 <template>
-  <div>Sign In</div>
+  <div>Log In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form @click.prevent="signIn">
+  <form @click.prevent="SignUp">
     <input type="text" v-model="email" />
     <input type="password" v-model="password" />
     <input type="submit" />
