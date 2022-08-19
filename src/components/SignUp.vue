@@ -70,18 +70,6 @@ const SignUp = () => {
   //   }, 5000);
   // }
 };
-// function checkPassword(password, confirmPassword) {
-//   console.log("hola");
-//   // console.log(password);
-//   // if (password === confirmPassword) {
-//   //   console.log(true);
-//   //   return;
-//   // } else {
-//   //   console.log(false);
-//   //   return;
-
-// };
-// };
 </script>
 
 <style></style>
