@@ -3,9 +3,14 @@
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <p v-if="errorMsg.length !== 0">{{ errorMsg }}</p>
   <form>
-    <input type="text" v-model="email" placeholder="your email" />
-    <input type="password" v-model="password" placeholder="******" />
-    <input type="password" v-model="confirmPassword" placeholder="******" />
+    <input type="text" v-model="email" placeholder="your email" required />
+    <input type="password" v-model="password" placeholder="******" required />
+    <input
+      type="password"
+      v-model="confirmPassword"
+      placeholder="******"
+      required
+    />
     {{ password }}
     <input type="submit" @click.prevent="SignUp" />
   </form>
@@ -54,7 +59,8 @@ const redirect = useRouter();
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const SignUp = () => {
   checkPassword()
-    ? useUserStore().signUp(email.value, password.value)
+    ? (useUserStore().signUp(email.value, password.value),
+      redirect.push({ path: "/auth" }))
     : (errorMsg.value = "Error, la contraseña no coincide");
   // try {
   //   // calls the user store and send the users info to backend to logIn

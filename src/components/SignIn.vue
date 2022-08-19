@@ -2,10 +2,11 @@
   <div>Log In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <form>
-    <input type="text" v-model="email" />
-    <input type="password" v-model="password" />
+    <input type="text" v-model="email" required />
+    <input type="password" v-model="password" required />
     <input type="submit" @click.prevent="signIn" />
   </form>
+  <p v-if="errorMsg.length !== 0">{{ errorMsg }}</p>
   <p>Time to build up the Final Project!</p>
 </template>
 
