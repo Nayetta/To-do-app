@@ -2,9 +2,9 @@
   <div>Sign Up</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <form @click.prevent="signIn">
-    <input type="text" v-model="email" />
-    <input type="password" v-model="password" />
-    <input type="password" v-model="password" />
+    <input type="email" :v-model="email" placeholder="your email" />
+    <input type="password" :v-model="password" placeholder="******" />
+    <input type="password" :v-model="confirmPassword" placeholder="******" />
     <input type="submit" />
   </form>
   <p>Good Music, Patience and a lot effort</p>
@@ -26,6 +26,8 @@ const buttonText = "Test the Sign In Route";
 // Input Fields
 const email = ref("");
 const password = ref("");
+const confirmPassword = ref("");
+
 // Error Message
 const errorMsg = ref("");
 

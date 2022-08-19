@@ -7,7 +7,6 @@
     <input type="submit" />
   </form>
   <p>Time to build up the Final Project!</p>
-  <p class="wu-text">Wu Tang Forever</p>
 </template>
 
 <script setup>
