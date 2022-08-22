@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full bg-teal-400 flex justify-around items-center">
+  <nav class="h-14 w-full bg-teal-400 flex justify-around items-center">
     TO DO TASK
     <SignOut />
   </nav>

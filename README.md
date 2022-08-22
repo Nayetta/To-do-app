@@ -1,6 +1,6 @@
 # This is my project ☕️
 
-## 1rst Day
+## 1rst Day Friday
 
 ### What I've done???
 
@@ -23,6 +23,28 @@
 <li>Home Sign Up Style (start)</li>
 <li>Sign Up Style (start)</li>
 <li>Sign Out in NavBar in Home</li>
+</ul>
+
+## 2nd Day Monday
+
+### What I've done???
+
+<ul>
+<li>✅ Home form</li>
+<li>🔜 Form to Supabase</li>
+<li>🔜 task cards style</li>
+<li>✅ Sign In Style (start)</li>
+<li>✅ Home Sign Up Style (start)</li>
+<li>✅ Sign Up Style (start)</li>
+<li>✅ Sign Out in NavBar in Home</li>
+</ul>
+
+### What i expect to do next day?
+
+<ul>
+<li>Form to Supabase</li>
+<li>task cards style</li>
+<li>show task cards</li>
 </ul>
 
 # final-boiler-plate
