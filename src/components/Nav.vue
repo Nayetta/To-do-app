@@ -1,8 +1,8 @@
 <template>
-  <div>
-    Nav Component
+  <nav class="w-full bg-teal-400 flex justify-around items-center">
+    TO DO TASK
     <SignOut />
-  </div>
+  </nav>
 </template>
 
 <script setup>

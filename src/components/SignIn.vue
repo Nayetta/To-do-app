@@ -43,12 +43,11 @@
       </div>
       <button
         type="submit"
+        @click.prevent="signIn"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Submit
       </button>
-
-      <input type="submit" @click.prevent="signIn" />
     </form>
     <p v-if="errorMsg.length !== 0">{{ errorMsg }}</p>
     <p>Time to build up the Final Project!</p>
