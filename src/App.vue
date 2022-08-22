@@ -1,9 +1,17 @@
+<template>
+  <div>
+    <ComponenteAislado />
+    <router-view />
+  </div>
+</template>
+
 <script setup>
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
+import ComponenteAislado from "./components/ComponenteAislado.vue";
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -26,11 +34,5 @@ onMounted(async () => {
   }
 });
 </script>
-
-<template>
-  <div>
-    <router-view />
-  </div>
-</template>
 
 <style></style>
