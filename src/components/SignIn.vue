@@ -1,5 +1,7 @@
 <template>
-  <div class="w-full h-full bg-amber-800">
+  <div
+    class="w-full h-screen bg-amber-500 flex flex-col justify-center items-center"
+  >
     <div>
       <h1 class="text-blue-600">Log In</h1>
     </div>
@@ -12,7 +14,7 @@
           type="email"
           name="floating_email"
           id="floating_email"
-          class="block py-2.5 px-0 w-4/12 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           v-model="email"
           required
@@ -30,7 +32,7 @@
           type="password"
           name="floating_password"
           id="floating_password"
-          class="block py-2.5 px-0 w-4/12 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           v-model="password"
           required
@@ -50,7 +52,6 @@
       </button>
     </form>
     <p v-if="errorMsg.length !== 0">{{ errorMsg }}</p>
-    <p>Time to build up the Final Project!</p>
   </div>
 </template>
 
@@ -111,9 +112,6 @@ const signIn = async () => {
   margin-bottom: 1rem;
 }
 .button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;

@@ -42,7 +42,7 @@
 ### What i expect to do next day?
 
 <ul>
-<li>Form to Supabase</li>
+<li>✅ Form to Supabase</li>
 <li>task cards style</li>
 <li>show task cards</li>
 </ul>
