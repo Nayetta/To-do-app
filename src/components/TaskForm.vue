@@ -57,10 +57,12 @@
 <script setup>
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
+import { useTaskSpace } from "./NewTasksSpace.vue";
 
 const title = ref("");
 const description = ref("");
 const date = new Date();
+const useSpace = useTaskSpace();
 
 const submitTask = async () => {
   try {
@@ -68,6 +70,7 @@ const submitTask = async () => {
     await useTaskStore().addTask(title.value, description.value);
     title.value = "";
     description.value = "";
+    useSpace.pullTasks();
     // redirects user to the homeView
   } catch (error) {
     // displays error message

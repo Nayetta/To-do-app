@@ -43,8 +43,26 @@
 
 <ul>
 <li>✅ Form to Supabase</li>
-<li>task cards style</li>
-<li>show task cards</li>
+<li>✅  task cards style</li>
+<li>✅ show task cards</li>
+</ul>
+
+## 3rd Day Monday
+
+### What I've done???
+
+<ul>
+<li>✅ Form to Supabase</li>
+<li>✅  task cards style</li>
+<li>✅ show task cards</li>
+</ul>
+
+### What i expect to do next day?
+
+<ul>
+<li>Fix bugs</li>
+<li>reorganize the logic</li>
+<li>finnish style</li>
 </ul>
 
 # final-boiler-plate
