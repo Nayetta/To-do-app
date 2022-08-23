@@ -6,7 +6,7 @@
       <h1 class="">Add a new Task</h1>
       <p class="">Keep your life organized, prepare for a trip? Start here</p>
 
-      <p class="">Today's Date is Aug 22nd 2022</p>
+      <p class="">Today's Date is {{ date }}</p>
     </div>
     <form class="w-8/12">
       <div class="w-full m-0 flex flex-col justify-center items-center">
@@ -60,6 +60,7 @@ import { useTaskStore } from "../stores/task";
 
 const title = ref("");
 const description = ref("");
+const date = new Date();
 
 const submitTask = async () => {
   try {
