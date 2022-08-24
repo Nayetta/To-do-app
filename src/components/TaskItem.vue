@@ -9,16 +9,40 @@
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {{ description }}
       </p>
+      <div class="inline-flex rounded-md shadow-sm" role="group">
+        <button
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          Done!
+        </button>
+        <button
+          @click.prevent="editTask"
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          Edit
+        </button>
+        <button
+          type="button"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          Delete
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const editTask = ref("");
 // const emit = defineEmits([
 //   ENTER-EMITS-HERE
 // ])
 const props = defineProps({
-  id: Number,
+  id: String,
   title: String,
   description: String,
   complete: Boolean,

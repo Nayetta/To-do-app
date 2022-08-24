@@ -57,20 +57,43 @@
 <script setup>
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
-import { useTaskSpace } from "./NewTasksSpace.vue";
+
+const emit = defineEmits(["add-task"]);
+
+const now = new Date();
+const mon = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+const date = `${week[now.getDay()]}, ${
+  mon[now.getMonth()]
+} ${now.getDate()}, ${now.getFullYear()}`;
 
 const title = ref("");
 const description = ref("");
-const date = new Date();
-const useSpace = useTaskSpace();
 
 const submitTask = async () => {
   try {
     // calls the user store and send the users info to backend to logIn
-    await useTaskStore().addTask(title.value, description.value);
-    title.value = "";
-    description.value = "";
-    useSpace.pullTasks();
+    if (title.value) {
+      emit("add-task", title.value, description.value);
+      title.value = "";
+      description.value = "";
+    } else {
+      errorMsg.value = `Error: Please, write a title!!!`;
+    }
     // redirects user to the homeView
   } catch (error) {
     // displays error message

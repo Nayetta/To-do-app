@@ -47,7 +47,7 @@
 <li>✅ show task cards</li>
 </ul>
 
-## 3rd Day Monday
+## 3rd Day Tuesday
 
 ### What I've done???
 
@@ -64,6 +64,22 @@
 <li>reorganize the logic</li>
 <li>finnish style</li>
 </ul>
+
+## 4th Day Wednesday
+
+### What I've done???
+
+<ul>
+<li>✅ Fix bugs</li>
+<li>✅ reorganize the logic</li>
+<li>edit task</li>
+<li>finish task</li>
+<li>delete task</li>
+<li>DA EYE</li>
+<li>finnish style</li>
+</ul>
+
+### What i expect to do next day?
 
 # final-boiler-plate
 

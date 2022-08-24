@@ -1,9 +1,9 @@
 <template>
   <div class="h-full flex justify-around m-7">
-    <div>
+    <div class="w-full flex-wrap flex justify-around">
       <TaskItem
         v-for="task in tasks"
-        :key="task"
+        :key="task.id"
         :title="task.title"
         :description="task.description"
         :complete="task.is_complete"
@@ -15,17 +15,10 @@
 
 <script setup>
 import TaskItem from "./TaskItem.vue";
-import { useTaskStore } from "../stores/task";
-import { ref } from "vue";
 
-const useTask = useTaskStore();
-const tasks = ref([]);
-
-const pullTasks = async () => {
-  tasks.value = await useTask.fetchTasks();
-};
-
-pullTasks();
+const props = defineProps({
+  tasks: Array,
+});
 </script>
 
 <style></style>

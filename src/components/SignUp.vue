@@ -94,6 +94,8 @@ const errorMsg = ref("");
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
+// Show hide confrimPassword variable
+const hidePassword = ref(true);
 
 function checkPassword() {
   if (password.value === confirmPassword.value) {
@@ -102,17 +104,15 @@ function checkPassword() {
     return false;
   }
 }
-// Show hide confrimPassword variable
-const hidePassword = ref(true);
 
 // Router to push user once SignedUp to Log In
 const redirect = useRouter();
 
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
-const SignUp = () => {
+const signUp = () => {
   checkPassword()
     ? (useUserStore().signUp(email.value, password.value),
-      redirect.push({ path: "/auth" }))
+      redirect.push({ path: "/auth/login" }))
     : (errorMsg.value = "Error, la contraseña no coincide");
   // try {
   //   // calls the user store and send the users info to backend to logIn

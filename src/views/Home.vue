@@ -1,7 +1,7 @@
 <template>
   <Nav />
-  <TaskForm />
-  <NewTasksSpace />
+  <TaskForm @add-task="addTask" />
+  <NewTasksSpace :tasks="tasks" />
   <Footer />
 </template>
 
@@ -10,6 +10,22 @@ import Nav from "../components/Nav.vue";
 import TaskForm from "../components/TaskForm.vue";
 import NewTasksSpace from "../components/NewTasksSpace.vue";
 import Footer from "../components/Footer.vue";
+import { useTaskStore } from "../stores/task";
+import { ref } from "vue";
+
+const useTask = useTaskStore();
+const tasks = ref([]);
+
+const pullTasks = async () => {
+  tasks.value = await useTask.fetchTasks();
+};
+
+pullTasks();
+
+const addTask = async (title, description) => {
+  await useTaskStore().addTask(title, description);
+  pullTasks();
+};
 </script>
 
 <style></style>
