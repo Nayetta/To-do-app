@@ -8,6 +8,7 @@
         :description="task.description"
         :complete="task.is_complete"
         :id="task.user_id"
+        @editTask="$emit('editTask', title, description, id)"
       />
     </div>
   </div>
@@ -15,6 +16,11 @@
 
 <script setup>
 import TaskItem from "./TaskItem.vue";
+
+const emit = defineEmits([
+  //   ENTER-EMITS-HERE
+  "editTask",
+]);
 
 const props = defineProps({
   tasks: Array,

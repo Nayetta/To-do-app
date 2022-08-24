@@ -1,7 +1,7 @@
 <template>
   <Nav />
   <TaskForm @add-task="addTask" />
-  <NewTasksSpace :tasks="tasks" />
+  <NewTasksSpace :tasks="tasks" @editTask="updateTask" />
   <Footer />
 </template>
 
@@ -25,6 +25,10 @@ pullTasks();
 const addTask = async (title, description) => {
   await useTaskStore().addTask(title, description);
   pullTasks();
+};
+
+const updateTask = async (title, description, id) => {
+  await useTaskStore().upDate(title, description, id);
 };
 </script>
 
