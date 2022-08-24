@@ -3,6 +3,7 @@
   <TaskForm @add-task="addTask" />
   <NewTasksSpace
     :tasks="tasks"
+    @toggleTask="toggleTask"
     @editTask="updateTask"
     @deleteTask="deleteTask"
   />
@@ -33,6 +34,11 @@ const addTask = async (title, description) => {
 
 const updateTask = async (title, description, id) => {
   await useTaskStore().upDate(title, description, id);
+  pullTasks();
+};
+
+const toggleTask = async (toggle, id) => {
+  await useTaskStore().toggleTask(toggle, id);
   pullTasks();
 };
 

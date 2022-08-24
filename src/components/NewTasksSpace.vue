@@ -8,7 +8,8 @@
         :description="task.description"
         :complete="task.is_complete"
         :id="task.id"
-        @editTask="$emit('editTask', task.title, task.description, task.id)"
+        @toggleTask="toggleTask"
+        @editTask="editedTask"
         @deleteTask="$emit('deleteTask', task.id)"
       />
     </div>
@@ -22,11 +23,20 @@ const emit = defineEmits([
   //   ENTER-EMITS-HERE
   "editTask",
   "deleteTask",
+  "toggleTask",
 ]);
 
 const props = defineProps({
   tasks: Array,
 });
+
+const editedTask = (title, description, id) => {
+  emit("editTask", title, description, id);
+};
+
+const toggleTask = (toggle, id) => {
+  emit("toggleTask", toggle, id);
+};
 </script>
 
 <style></style>
