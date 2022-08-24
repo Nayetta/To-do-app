@@ -62,7 +62,7 @@
           Done!
         </button>
         <button
-          @click="editButton(title, description, id)"
+          @click="editButton()"
           type="button"
           id="buttonEdit"
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
@@ -70,6 +70,7 @@
           Edit
         </button>
         <button
+          @click="$emit('deleteTask', id)"
           type="button"
           id="buttonDelete"
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
@@ -80,7 +81,7 @@
       </div>
       <div v-else>
         <button
-          @click="editButton(title, description, id)"
+          @click="editedTask(title, description, id)"
           type="button"
           id="buttonEdit"
           class="inline-flex rounded-md shadow-sm items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
@@ -94,19 +95,26 @@
 
 <script setup>
 import { ref } from "vue";
+
 const editToggle = ref(true);
+
 const editButton = (title, description, id) => {
   editToggle.value = !editToggle.value;
+  //console.log("holaaaa, ja hem editat la info");
+};
+const editedTask = (title, description, id) => {
   emit("editTask", title, description, id);
+  editToggle.value = !editToggle.value;
 };
 
 const emit = defineEmits([
   //   ENTER-EMITS-HERE
   "editTask",
+  "deleteTask",
 ]);
 
 const props = defineProps({
-  id: String,
+  id: Number,
   title: String,
   description: String,
   complete: Boolean,
