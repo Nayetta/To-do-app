@@ -1,8 +1,10 @@
 <template>
   <div>
+    <!-- all the catd -->
     <div
       class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
     >
+      <!-- if toggle is off, display just the text -->
       <div v-if="editToggle">
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {{ title }}
@@ -11,6 +13,7 @@
           {{ description }}
         </p>
       </div>
+      <!-- if toggle is on, display the form -->
       <div v-else>
         <div class="w-full relative z-0 mb-6 group">
           <input
@@ -45,9 +48,15 @@
           >
         </div>
       </div>
-      <div class="inline-flex rounded-md shadow-sm" role="group">
+      <!-- 3 Butons group if edit toggle is true -->
+      <div
+        class="inline-flex rounded-md shadow-sm"
+        role="group"
+        v-if="editToggle"
+      >
         <button
           type="button"
+          id="buttonDone"
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
         >
           Done!
@@ -55,15 +64,28 @@
         <button
           @click="editButton(title, description, id)"
           type="button"
+          id="buttonEdit"
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
         >
           Edit
         </button>
         <button
           type="button"
+          id="buttonDelete"
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
         >
           Delete
+        </button>
+        <!-- 1 only button Confirm, if toggle is false -->
+      </div>
+      <div v-else>
+        <button
+          @click="editButton(title, description, id)"
+          type="button"
+          id="buttonEdit"
+          class="inline-flex rounded-md shadow-sm items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+        >
+          Confirm
         </button>
       </div>
     </div>
@@ -72,10 +94,10 @@
 
 <script setup>
 import { ref } from "vue";
-const editToggle = true;
+const editToggle = ref(true);
 const editButton = (title, description, id) => {
+  editToggle.value = !editToggle.value;
   emit("editTask", title, description, id);
-  editButton !== editButton;
 };
 
 const emit = defineEmits([
