@@ -1,12 +1,14 @@
 <template>
   <Nav />
-  <TaskForm @add-task="addTask" />
-  <NewTasksSpace
-    :tasks="tasks"
-    @toggleTask="toggleTask"
-    @editTask="updateTask"
-    @deleteTask="deleteTask"
-  />
+  <div class="flex">
+    <NewTasksSpace
+      :tasks="tasks"
+      @toggleTask="toggleTask"
+      @editTask="updateTask"
+      @deleteTask="deleteTask"
+    />
+    <TaskForm @add-task="addTask" />
+  </div>
   <Footer />
 </template>
 

@@ -72,14 +72,18 @@
 <ul>
 <li>✅ Fix bugs</li>
 <li>✅ reorganize the logic</li>
-<li>edit task</li>
-<li>finish task</li>
-<li>delete task</li>
-<li>DA EYE</li>
-<li>finnish style</li>
+<li>✅ edit task</li>
+<li>✅ finish task</li>
+<li>✅ delete task</li>
+
 </ul>
 
 ### What i expect to do next day?
+
+<ul>
+<li>DA EYE</li>
+<li>finnish style</li>
+</ul>
 
 # final-boiler-plate
 

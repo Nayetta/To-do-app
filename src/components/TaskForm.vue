@@ -1,6 +1,6 @@
 <template>
   <main
-    class="bg-teal-200 p-6 flex flex-col justify-center items-center w-full"
+    class="bg-teal-200 p-6 flex flex-col justify-center items-center w-4/12"
   >
     <div class="flex flex-col justify-center items-center">
       <h1 class="">Add a new Task</h1>
@@ -15,7 +15,7 @@
             type="text"
             name="title-task"
             id="title-task"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             v-model="title"
             required
@@ -31,7 +31,7 @@
             type="text"
             name="description"
             id="description"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             v-model="description"
             required

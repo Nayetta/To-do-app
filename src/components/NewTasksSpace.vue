@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full flex justify-around m-7">
-    <div class="w-full flex-wrap flex justify-around">
+  <div class="h-full w-8/12 flex justify-start m-7">
+    <div class="w-full flex-wrap flex justify-start">
       <TaskItem
         v-for="task in tasks"
         :key="task.id"

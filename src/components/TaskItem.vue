@@ -2,11 +2,11 @@
   <div>
     <!-- all the catd -->
     <div
-      class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+      class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-4"
     >
       <div class="relative">
-        <div v-if="complete" class="absolute -top-12 -left-19 text-6xl">
-          <img src="../img/Sticker.png" alt="" class="w-2/3" />
+        <div v-if="complete" class="absolute -top-16 left-32">
+          <img src="../img/Sticker.png" alt="" class="" />
         </div>
         <!-- if toggle is off, display just the text -->
         <div v-if="editToggle">
