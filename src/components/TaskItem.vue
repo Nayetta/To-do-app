@@ -2,7 +2,7 @@
   <div>
     <!-- all the catd -->
     <div
-      class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-4"
+      class="p-6 max-w-sm bg-white rounded-lg shadow-md dark:bg-teal-500 dark:border-teal-700 m-2 mt-7"
     >
       <div class="relative">
         <div v-if="complete" class="absolute -top-16 left-32">
@@ -10,10 +10,10 @@
         </div>
         <!-- if toggle is off, display just the text -->
         <div v-if="editToggle">
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p class="mb-3 font-bold text-white dark:text-white">
             {{ title }}
           </p>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p class="mb-3 font-normal text-white dark:text-white">
             {{ description }}
           </p>
         </div>
@@ -62,15 +62,21 @@
             type="button"
             @click="toggleTask(complete, id)"
             id="buttonDone"
-            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
+            <!-- 
+            text-gray-900 bg-transparent rounded-l-lg border border-teal-700
+            hover:bg-teal-700 hover:text-white focus:z-10 focus:ring-2
+            focus:ring-gray-500 focus:bg-teal-700focus:text-white
+            dark:border-white dark:text-white dark:hover:text-white
+            dark:hover:bg-teal-700 dark:focus:bg-teal-700"  -->
             Done!
           </button>
           <button
             @click="editButton()"
             type="button"
             id="buttonEdit"
-            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
             Edit
           </button>
@@ -78,7 +84,7 @@
             @click="$emit('deleteTask', id)"
             type="button"
             id="buttonDelete"
-            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
             Delete
           </button>
@@ -89,7 +95,7 @@
             @click="editedTask(title, description, id)"
             type="button"
             id="buttonEdit"
-            class="inline-flex rounded-md shadow-sm items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+            class="inline-flex rounded-md shadow-sm items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
             Confirm
           </button>

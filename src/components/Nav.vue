@@ -1,5 +1,10 @@
 <template>
-  <nav class="h-14 w-full bg-teal-400 flex justify-around items-center">
+  <nav class="h-20 w-full bg-teal-100 flex justify-around items-center">
+    <div class="flex flex-col">
+      <p class="">Today is {{ date1 }}</p>
+      <p>{{ date2 }}</p>
+    </div>
+
     TO DO TASK
     <SignOut />
   </nav>
@@ -8,6 +13,33 @@
 <script setup>
 import SignOut from "./SignOut.vue";
 
+const now = new Date();
+const mon = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const week = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const date1 = `${week[now.getDay()]}`;
+const date2 = `${mon[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
 //constant to save a variable that will hold the use router method
 
 // constant to save a variable that will get the user from store with a computed function imported from vue

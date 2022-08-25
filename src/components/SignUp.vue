@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col m-1 w-full h-screen bg-red-200 justify-center items-center"
+    class="flex flex-col w-full h-screen bg-red-100 justify-center items-center"
   >
     <div>Sign Up</div>
     <PersonalRouter :route="route" :buttonText="buttonText" />
@@ -27,7 +27,7 @@
 
       <div class="relative z-0 mb-6 w-full group">
         <input
-          type="password"
+          :type="passwordFieldType"
           name="floating_password"
           id="floating_password"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -44,13 +44,18 @@
       <!-- DIV PASSWORD INPUT AND LABEL -->
       <div class="relative z-0 mb-6 w-full group">
         <input
-          type="password"
+          :type="passwordFieldType"
           name="floating_confirmPassword"
           id="floating_confirmPassword"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           v-model="confirmPassword"
           required
+        />
+        <EyeIcon
+          :class="[passwordFieldIcon]"
+          class="w-7 absolute right-2 bottom-3"
+          @click.prevent="hidePassword = !hidePassword"
         />
         <label
           for="floating_confirmPassword"
@@ -77,6 +82,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import { EyeIcon, EyeOffIcon } from "@heroicons/vue/outline";
 
 // Route Variables
 const route = "/auth/login";

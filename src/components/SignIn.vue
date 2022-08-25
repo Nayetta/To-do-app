@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-screen bg-amber-500 flex flex-col justify-center items-center"
+    class="w-full h-screen bg-green-200 flex flex-col justify-center items-center"
   >
     <div>
       <h1 class="text-blue-600">Log In</h1>

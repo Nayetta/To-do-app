@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full w-8/12 flex justify-start p-7 bgcork">
-    <div class="w-full flex-wrap flex justify-start">
+  <div class="w-8/12 flex justify-start items-start p-4 bgcozy h-full">
+    <div class="w-full flex-wrap flex justify-around items-start h-full">
       <TaskItem
         v-for="task in tasks"
         :key="task.id"
@@ -40,11 +40,11 @@ const toggleTask = (toggle, id) => {
 </script>
 
 <style>
-.bgcork {
-  background-image: url("../img/cork.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.bgcozy {
+  background-image: url("../img/cozy.jpg");
+  /* background-position: center center; */
+  background-repeat: repeat;
+  /* background-size: cover; */
   display: grid;
   align-items: center;
   justify-items: center;

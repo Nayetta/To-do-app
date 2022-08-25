@@ -1,12 +1,9 @@
 <template>
   <main
-    class="bg-teal-200 p-6 flex flex-col justify-center items-center w-4/12"
+    class="bg-teal-100 p-6 flex flex-col justify-start items-center w-4/12 h-full pt-7"
   >
     <div class="flex flex-col justify-center items-center">
-      <h1 class="">Add a new Task</h1>
-      <p class="">Keep your life organized, prepare for a trip? Start here</p>
-
-      <p class="">Today's Date is {{ date }}</p>
+      <h1 class="font-bold">Add a new Task</h1>
     </div>
     <form class="w-8/12">
       <div class="w-full m-0 flex flex-col justify-center items-center">
@@ -45,7 +42,7 @@
         <button
           type="submit"
           @click.prevent="submitTask"
-          class="w-6/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class="w-6/12 h-10 transition duration-150 ease-in-out text-white font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center bg-gradient-to-r from-green-300 to-red-200 hover:from-red-200 hover:to-green-300 shadow-md"
         >
           Add task
         </button>
@@ -59,27 +56,6 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 
 const emit = defineEmits(["add-task"]);
-
-const now = new Date();
-const mon = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-const date = `${week[now.getDay()]}, ${
-  mon[now.getMonth()]
-} ${now.getDate()}, ${now.getFullYear()}`;
 
 const title = ref("");
 const description = ref("");

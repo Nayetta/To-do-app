@@ -1,15 +1,17 @@
 <template>
-  <Nav />
-  <div class="flex">
-    <NewTasksSpace
-      :tasks="tasks"
-      @toggleTask="toggleTask"
-      @editTask="updateTask"
-      @deleteTask="deleteTask"
-    />
-    <TaskForm @add-task="addTask" />
+  <div class="max-h-screen h-screen">
+    <Nav />
+    <div class="flex bg-teal-100 h-full">
+      <NewTasksSpace
+        :tasks="tasks"
+        @toggleTask="toggleTask"
+        @editTask="updateTask"
+        @deleteTask="deleteTask"
+      />
+      <TaskForm @add-task="addTask" />
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script setup>
