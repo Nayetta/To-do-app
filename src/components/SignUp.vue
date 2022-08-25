@@ -5,14 +5,14 @@
     <div>Sign Up</div>
     <PersonalRouter :route="route" :buttonText="buttonText" />
     <p v-if="errorMsg.length !== 0">{{ errorMsg }}</p>
-    <form>
+    <form class="w-4/12">
       <!-- DIV EMAIL INPUT AND LABEL -->
       <div class="relative z-0 mb-6 w-full group">
         <input
           type="email"
           name="floating_email"
           id="floating_email"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           v-model="email"
           required
@@ -30,7 +30,7 @@
           type="password"
           name="floating_password"
           id="floating_password"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           v-model="password"
           required
@@ -38,7 +38,7 @@
         <label
           for="floating_password"
           class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >Password</label
+          >Password (6 caracters min)</label
         >
       </div>
       <!-- DIV PASSWORD INPUT AND LABEL -->
@@ -47,7 +47,7 @@
           type="password"
           name="floating_confirmPassword"
           id="floating_confirmPassword"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-900 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           v-model="confirmPassword"
           required
@@ -112,8 +112,14 @@ const redirect = useRouter();
 const signUp = () => {
   checkPassword()
     ? (useUserStore().signUp(email.value, password.value),
-      redirect.push({ path: "/auth/login" }))
-    : (errorMsg.value = "Error, la contraseña no coincide");
+      alert(
+        "your user has been successfully registered. Please, confirm your email and enjoy the app"
+      ))
+    : //useUserStore().addUser(email.value))
+      //redirect.push({ path: "/" })
+      (errorMsg.value = "Error, la contraseña no coincide");
+
+  // useUserStore().addUser(email.value);
   // try {
   //   // calls the user store and send the users info to backend to logIn
   //   await useUserStore().signUp(email.value, password.value);
