@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-8/12 flex justify-start m-7">
+  <div class="h-full w-8/12 flex justify-start p-7 bgcork">
     <div class="w-full flex-wrap flex justify-start">
       <TaskItem
         v-for="task in tasks"
@@ -39,4 +39,16 @@ const toggleTask = (toggle, id) => {
 };
 </script>
 
-<style></style>
+<style>
+.bgcork {
+  background-image: url("../img/cork.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 66vw;
+  grid-template-rows: 600px;
+}
+</style>
