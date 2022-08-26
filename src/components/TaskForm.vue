@@ -48,6 +48,9 @@
         >
           Add task
         </button>
+        <p class="text-red-700 m-2" v-if="errorMsg.length !== 0">
+          {{ errorMsg }}
+        </p>
       </div>
     </form>
 
@@ -64,6 +67,8 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 
 const emit = defineEmits(["add-task"]);
+
+const errorMsg = ref("");
 
 const title = ref("");
 const description = ref("");
