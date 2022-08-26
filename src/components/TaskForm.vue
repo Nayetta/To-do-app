@@ -50,6 +50,12 @@
         </button>
       </div>
     </form>
+
+    <router-link
+      class="h-10 transition duration-150 ease-in-out text-white font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center bg-gradient-to-r from-green-300 to-red-200 hover:from-red-200 hover:to-green-300 shadow-md m-5"
+      to="/profile"
+      >My Profile</router-link
+    >
   </main>
 </template>
 

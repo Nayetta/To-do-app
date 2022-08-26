@@ -63,6 +63,19 @@ export const useUserStore = defineStore("user", {
     async signOut() {
       const { error } = await supabase.auth.signOut();
     },
+
+    async checkUserName() {
+      let checker = false;
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("username")
+        .match({ id: useUserStore().user.id });
+      if (error) throw error;
+      if (data.length) {
+        checker = true;
+      }
+      return checker;
+    },
   },
 
   persist: {

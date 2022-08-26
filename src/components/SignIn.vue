@@ -96,7 +96,7 @@ const signIn = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path: "/" });
+    gestorRoute();
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;
@@ -104,6 +104,17 @@ const signIn = async () => {
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
+  }
+};
+
+const gestorRoute = async () => {
+  console.log(useUserStore().checkUserName());
+  if (await useUserStore().checkUserName()) {
+    console.log("verdaderuuuuu");
+    redirect.push({ path: "/" });
+  } else {
+    console.log("falsisimuuuu");
+    redirect.push({ path: "/profile" });
   }
 };
 </script>
