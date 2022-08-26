@@ -1,17 +1,17 @@
 <template>
-  <div class="max-h-screen h-screen">
-    <Nav />
-    <div class="flex bg-teal-100 h-full">
-      <NewTasksSpace
-        :tasks="tasks"
-        @toggleTask="toggleTask"
-        @editTask="updateTask"
-        @deleteTask="deleteTask"
-      />
-      <TaskForm @add-task="addTask" />
-    </div>
-    <Footer />
+  <Nav />
+  <div
+    class="flex flex-col-reverse md:flex-row justify-between bg-teal-100 h-full mediahome"
+  >
+    <NewTasksSpace
+      :tasks="tasks"
+      @toggleTask="toggleTask"
+      @editTask="updateTask"
+      @deleteTask="deleteTask"
+    />
+    <TaskForm @add-task="addTask" />
   </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -52,7 +52,13 @@ const deleteTask = async (id) => {
 };
 </script>
 
-<style></style>
+<style>
+/* @media only screen and (max-width: 862px) {
+  .mediahome {
+    flex-direction: column-reverse;
+  }
+} */
+</style>
 
 <!-- 
 **Hints**

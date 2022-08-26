@@ -1,6 +1,10 @@
 <template>
-  <div class="w-8/12 flex justify-start items-start p-4 bgcozy h-full">
-    <div class="w-full flex-wrap flex justify-around items-start h-full">
+  <div
+    class="flex justify-start items-start p-4 bgcozy h-full w-full mediaspace"
+  >
+    <div
+      class="w-full min-h-screen flex-wrap flex justify-around items-start h-full"
+    >
       <TaskItem
         v-for="task in tasks"
         :key="task.id"
@@ -48,7 +52,11 @@ const toggleTask = (toggle, id) => {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 66vw;
-  grid-template-rows: 600px;
+}
+
+@media only screen and (max-width: 862px) {
+  .mediaspace {
+    width: 100vw;
+  }
 }
 </style>

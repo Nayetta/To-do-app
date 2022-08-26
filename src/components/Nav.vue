@@ -4,7 +4,7 @@
       <p class="">Today is {{ date1 }}</p>
       <p>{{ date2 }}</p>
     </div>
-
+    <!-- <MoonIcon /> -->
     TO DO TASK
     <SignOut />
   </nav>
@@ -12,6 +12,7 @@
 
 <script setup>
 import SignOut from "./SignOut.vue";
+//import { MoonIcon, MoonOffIcon } from "@heroicons/vue/outline";
 
 const now = new Date();
 const mon = [

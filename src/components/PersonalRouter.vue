@@ -1,5 +1,7 @@
 <template>
-  <router-link :to="route">{{ buttonText }}</router-link>
+  <router-link class="text-teal-500 font-medium m-5 text-center" :to="route">{{
+    buttonText
+  }}</router-link>
 </template>
 
 <script setup>
