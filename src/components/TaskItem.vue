@@ -2,7 +2,7 @@
   <div>
     <!-- all the catd -->
     <div
-      class="p-6 max-w-sm bg-white rounded-lg shadow-md dark:bg-teal-500 dark:border-teal-700 m-2 mt-7"
+      class="p-6 max-w-sm rounded-lg shadow-md bg-red-200 border-red-400 dark:bg-teal-500 dark:border-teal-700 m-2 mt-7"
     >
       <div class="relative">
         <div v-if="complete" class="absolute -top-16 left-32">
@@ -24,14 +24,14 @@
               type="text"
               name="title-task"
               id="title-task"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-teal-600 dark:focus:border-teal-700 focus:outline-none focus:ring-0 focus:border-red-400 peer"
               placeholder=" "
               v-model="title"
               required
             />
             <label
               for="title-task"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              class="peer-focus:font-medium absolute text-sm text-gray-100 dark:text-gray-200 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-gray-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >Add a task title</label
             >
           </div>
@@ -40,14 +40,14 @@
               type="text"
               name="description"
               id="description"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-red-300 appearance-none dark:text-white dark:border-teal-600 dark:focus:border-teal-700 focus:outline-none focus:ring-0 focus:border-red-400 peer"
               placeholder=" "
               v-model="description"
               required
             />
             <label
               for="description"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              class="peer-focus:font-medium absolute text-sm text-gray-100 dark:text-gray-200 duration-300 transform -translate-y-6 scale-75 top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-gray-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >Add a task description</label
             >
           </div>
@@ -62,21 +62,15 @@
             type="button"
             @click="toggleTask(complete, id)"
             id="buttonDone"
-            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
+            class="inline-flex items-center py-2 px-4 text-sm font-medium bg-transparent rounded-l-lg border border-white hover:bg-red-300 text-white hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
-            <!-- 
-            text-gray-900 bg-transparent rounded-l-lg border border-teal-700
-            hover:bg-teal-700 hover:text-white focus:z-10 focus:ring-2
-            focus:ring-gray-500 focus:bg-teal-700focus:text-white
-            dark:border-white dark:text-white dark:hover:text-white
-            dark:hover:bg-teal-700 dark:focus:bg-teal-700"  -->
             Done!
           </button>
           <button
             @click="editButton()"
             type="button"
             id="buttonEdit"
-            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
+            class="inline-flex items-center py-2 px-4 text-sm font-medium bg-transparent border-t border-b border-white hover:bg-red-300 text-white hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
             Edit
           </button>
@@ -84,7 +78,7 @@
             @click="$emit('deleteTask', id)"
             type="button"
             id="buttonDelete"
-            class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
+            class="inline-flex items-center py-2 px-4 text-sm font-medium bg-transparent rounded-r-md border border-white hover:bg-red-300 text-white hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
             Delete
           </button>
@@ -95,7 +89,7 @@
             @click="editedTask(title, description, id)"
             type="button"
             id="buttonEdit"
-            class="inline-flex rounded-md shadow-sm items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border border-teal-700 hover:bg-teal-700 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
+            class="inline-flex rounded-md shadow-sm items-center py-2 px-4 text-sm font-medium text-white bg-transparent border border-white hover:bg-red-300 hover:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-teal-700"
           >
             Confirm
           </button>
